@@ -3,7 +3,7 @@ package com.fintrack;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class FindTrack { 
+public class FinTrack { 
 	 public static void main(String[] args) {
 	        Scanner scanner = new Scanner(System.in);
 	        ArrayList<Gasto> gastos = new ArrayList<>();
