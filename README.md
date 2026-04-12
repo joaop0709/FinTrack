@@ -1,29 +1,42 @@
-# FinTrack
+# FinTrack - Gestão de Gastos Inteligente
 
-## Sobre o projeto
-O FinTrack é uma aplicação em Java feita para ajudar no controle de gastos pessoais de forma simples, utilizando o terminal.
+**Versão:** 1.0.0  
+**Autor:** João Paulo Costa Sales  
+**Repositório:** [https://github.com/seu-usuario/fintrack](https://github.com/joaop0709/fintrack)
 
-## Problema
-Muitas pessoas não conseguem controlar seus gastos diários, o que pode causar desorganização financeira.
+---
 
-## Solução
-O sistema permite registrar e acompanhar gastos, ajudando o usuário a ter mais controle sobre seu dinheiro.
+## 📝 Descrição do Problema
+Muitas pessoas têm dificuldade em manter um registo organizado das suas despesas diárias, perdendo a noção de quanto gastam ao longo do mês. A falta de uma ferramenta simples resulta em descontrolo financeiro e dificuldade em priorizar poupanças.
 
-## Funcionalidades
-- Adicionar gasto
-- Listar gastos
-- Remover gasto
-- Ver total gasto
+## 💡 Proposta da Solução
+O **FinTrack** surge como uma aplicação de consola leve e direta, focada na rapidez de inserção de dados. A solução permite o registo imediato de gastos, oferecendo um somatório automático e ferramentas de edição de histórico (remoção e limpeza), garantindo que o utilizador tenha sempre o saldo atualizado.
 
-## Como executar
-1. Abra o projeto no Eclipse
-2. Execute a classe principal
+## 👥 Público-alvo
+Estudantes e jovens profissionais que procuram uma ferramenta minimalista e funcional para controlo financeiro sem a complexidade de aplicações bancárias ou folhas de cálculo extensas.
 
-## Versão
-1.0.0
+---
 
-## Autor
-João Paulo Costa Sales
+## 🚀 Funcionalidades Principais
+* **Registo de Despesas:** Adição de valores numéricos com suporte a casas decimais.
+* **Cálculo Automático:** Visualização instantânea do total acumulado.
+* **Gestão de Erros:** Opção para remover o último item inserido ou limpar toda a lista em caso de erro.
+* **Persistência Simples:** Estrutura baseada em listas dinâmicas para manipulação em tempo real.
 
-## Repositório
-https://github.com/joaop0709/FinTrack
+## 🛠️ Tecnologias Utilizadas
+* **Linguagem:** Java 17 (JDK)
+* **Gestor de Dependências:** Maven
+* **Testes:** JUnit 5.10.0
+* **CI/CD:** GitHub Actions (Workflow `ci.yml`)
+
+---
+
+## ⚙️ Instruções de Instalação e Execução
+
+### Instalação
+1. Clone o repositório:
+   ```bash
+   git clone [https://github.com/joaop0709/fintrack.git](https://github.com/joaop0709/fintrack.git)
+
+
+
