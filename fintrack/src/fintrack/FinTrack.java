@@ -1,9 +1,9 @@
-package fintrack;
+package com.fintrack;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class FinTrack {
+public class FindTrack { 
 	 public static void main(String[] args) {
 	        Scanner scanner = new Scanner(System.in);
 	        ArrayList<Gasto> gastos = new ArrayList<>();
@@ -92,3 +92,5 @@ public class FinTrack {
 	        scanner.close();
 	    }
 	}
+
+

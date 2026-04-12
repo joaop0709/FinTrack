@@ -1,4 +1,4 @@
-package fintrack;
+package com.fintrack;
 
 public class Gasto {
     private String descricao;
