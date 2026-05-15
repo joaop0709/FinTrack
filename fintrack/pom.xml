@@ -36,6 +36,21 @@
                 <version>3.2.5</version>
             </plugin>
 
+            <!-- Plugin para gerar JAR executável (Deploy) -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.fintrack.FinTrack</mainClass>
+                        </manifest>
+                    </archive>
+                    <finalName>fintrack</finalName>
+                </configuration>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
