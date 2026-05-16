@@ -94,6 +94,6 @@ java -jar target/fintrack.jar
 O pipeline do GitHub Actions roda automaticamente a cada push nas branches `master` e `entrega-intermediaria`, executando:
 1. Compilação (`mvn compile`)
 2. Testes unitários + integração (`mvn test`)
-3. Geração do JAR (`mvn package`).
+3. Geração do JAR (`mvn package`)!
    
 
