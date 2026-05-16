@@ -10,6 +10,10 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: fintrack
+
     steps:
       - name: Checkout do repositório
         uses: actions/checkout@v4
@@ -30,8 +34,8 @@ jobs:
       - name: Gerar JAR executável
         run: mvn package -DskipTests --no-transfer-progress
 
-      - name: Upload do JAR como artefato
+      - name: Fazer upload do JAR gerado
         uses: actions/upload-artifact@v4
         with:
           name: fintrack-jar
-          path: target/fintrack.jar
+          path: fintrack/target/*.jar
