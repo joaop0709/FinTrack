@@ -1,4 +1,4 @@
-name: CI - FinTrack
+name: CI  FinTrack
 
 on:
   push:
