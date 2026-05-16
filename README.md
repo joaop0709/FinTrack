@@ -8,7 +8,7 @@
 
 ## ⬇️ Download / Execução
 
-> **[📦 Baixar fintrack.jar — Última Versão](https://github.com/joaop0709/FinTrack/releases/latest)**
+> **[📦 Baixar fintrack.jar — Última Versão](https://github.com/joaop0709/FinTrack/releases/tag/v1.1)**
 
 ```bash
 java -jar fintrack.jar
