@@ -33,8 +33,26 @@ public class FinTrack {
                     if (valor <= 0) {
                         System.out.println("Valor inválido. Digite um valor maior que zero.");
                     } else {
-                        gastos.add(new Gasto(descricao, valor));
-                        System.out.println("Gasto adicionado com sucesso.");
+                    	// --- INÍCIO DO CÓDIGO DO BANCO DE DADOS ---
+                    	String comandoSql = "INSERT INTO despesas (descricao, valor, data) VALUES (?, ?, ?)";
+
+                    	try (java.sql.Connection conexao = DatabaseConnection.obterConexao();
+                    	     java.sql.PreparedStatement formulario = conexao.prepareStatement(comandoSql)) {
+
+                    	    // Preenchemos o "formulário" com o que o usuário digitou acima
+                    	    formulario.setString(1, descricao); 
+                    	    formulario.setDouble(2, valor);     
+                    	    
+                    	    // Pega a data de hoje automaticamente do seu computador
+                    	    formulario.setString(3, java.time.LocalDate.now().toString());      
+
+                    	    formulario.executeUpdate(); // Envia para a nuvem
+                    	    System.out.println("✅ Gasto adicionado com sucesso no Banco de Dados!");
+
+                    	} catch (Exception e) {
+                    	    System.out.println("❌ Ops! Erro ao salvar no banco. O erro foi: " + e.getMessage());
+                    	}
+                    	// --- FIM DO CÓDIGO DO BANCO DE DADOS ---
                     }
                     break;
 
