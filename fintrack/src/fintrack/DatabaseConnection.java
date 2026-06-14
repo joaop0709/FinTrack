@@ -6,11 +6,11 @@ import java.sql.SQLException;
 
 public class DatabaseConnection {
 
-    // Dados reais do seu painel do Aiven
+    // Dados de conexão com o painel do Aiven
     private static final String URL = "jdbc:postgresql://pg-2013d501-fintrack.aivencloud.com:13979/defaultdb?sslmode=require";
     private static final String USER = "avnadmin";
     private static final String PASSWORD = "AVNS_QzG2PEickePZPoQqug-";
-    
+
     private static Connection connection = null;
 
     public static Connection getConnection() throws SQLException {
@@ -18,13 +18,11 @@ public class DatabaseConnection {
             try {
                 // Carrega o driver do PostgreSQL
                 Class.forName("org.postgresql.Driver");
-                
-                // Abre a conexão com o banco do Aiven
                 connection = DriverManager.getConnection(URL, USER, PASSWORD);
-                System.out.println("🚀 Conexão com o Aiven PostgreSQL estabelecida com sucesso!");
-                
+                System.out.println("Conexão com o banco Aiven realizada com sucesso!");
             } catch (ClassNotFoundException e) {
-                throw new SQLException("Driver do PostgreSQL não encontrado!", e);
+                System.err.println("Driver do PostgreSQL não encontrado!");
+                e.printStackTrace();
             }
         }
         return connection;
