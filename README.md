@@ -5,7 +5,7 @@
 
 **Versão:** 3.0.0 (Database Cloud Edition)  
 **Repositório:** [https://github.com/joaop0709/FinTrack](https://github.com/joaop0709/FinTrack)
-
+**Deploy:**`[https://replit.com/@victorinogo1314/FinTrack]
 ---
 
 ## 👥 Integrantes do Grupo e Divisão de Issues
