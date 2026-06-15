@@ -1,32 +1,47 @@
 
 
-```markdown
 # FinTrack - Gestão de Gastos Inteligente
 
 **Versão:** 3.0.0 (Database Cloud Edition)  
-**Repositório:** [https://github.com/joaop0709/FinTrack](https://github.com/joaop0709/FinTrack)
-**Deploy:**`[https://replit.com/@victorinogo1314/FinTrack]
+**Repositório:** [https://github.com/joaop0709/FinTrack](https://github.com/joaop0709/FinTrack)  
+**Deploy:** [https://replit.com/@victorinogo1314/FinTrack](https://replit.com/@victorinogo1314/FinTrack)
+
 ---
 
 ## 👥 Integrantes do Grupo e Divisão de Issues
 
 | Nome Completo | Matrícula | Atribuição / Issue Principal |
 | :--- | :--- | :--- |
-| **Enzo Bastos** | Issue #3: Listagem do Banco e Integração AwesomeAPI |
-| **João Paulo Costa Sales**  | Issue #1 / Dono do Repositório: Conexão Base e Setup |
-| *Victor Hugo Candido*  | Issue #2: Persistência e INSERT de Despesas |
-| *Vinicius Coelho* | Issue #4: Remoção de Gastos e Tratamento de Erros |
-| **João Paulo Costa Sales** e **Enzo Bastos** | Issue #5: Ajuste de Testes e Pipeline CI/CD |
+| **Enzo Bastos** | - | Issue #3: Listagem do Banco e Integração AwesomeAPI |
+| **João Paulo Costa Sales** | - | Issue #1 / Dono do Repositório: Conexão Base e Setup |
+| *Victor Hugo Candido* | - | Issue #2: Persistência e INSERT de Despesas |
+| *Vinicius Coelho* | - | Issue #4: Remoção de Gastos e Tratamento de Erros |
+| **João Paulo Costa Sales** e **Enzo Bastos** | - | Issue #5: Ajuste de Testes e Pipeline CI/CD |
 
 ---
 
-## ⬇️ Download / Execução Rápida
+## 📥 Download e Execução Rápida
 
-> **[📦 Baixar fintrack.jar — Última Versão](https://github.com/joaop0709/FinTrack/releases/tag/v1.1)**
+> 💡 **Pré-requisito:** Certifique-se de ter o **Java 17 ou superior** instalado e as variáveis de ambiente do banco de dados configuradas.
+
+### 🚀 Passo 1: Baixar o Executável
+Clique no card abaixo para obter a build mais recente do sistema:
+
+<table>
+  <tr>
+    <td>
+      <a href="https://github.com/joaop0709/FinTrack/releases/latest">
+        <strong>📦 Baixar fintrack.jar (Última Versão)</strong>
+      </a>
+    </td>
+  </tr>
+</table>
+
+### 💻 Passo 2: Rodar a Aplicação
+Abra o terminal na pasta onde você baixou o arquivo `.jar` e execute o comando abaixo:
 
 ```bash
 java -jar fintrack.jar
-
 ```
 
 > *Requisito: Java 17 ou superior instalado e variáveis de ambiente do banco configuradas.*
