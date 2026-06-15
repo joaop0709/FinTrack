@@ -8,7 +8,7 @@ public class FinTrack {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
-        // Mantemos a lista antiga temporariamente para não quebrar o "case 3"
+        // Mantemos a lista antiga temporariamente para não quebrar o escopo original
         ArrayList<Gasto> gastosMemoria = new ArrayList<>(); 
         
         // Instanciamos o DAO para consultar o banco de dados de forma profissional
@@ -20,7 +20,7 @@ public class FinTrack {
             System.out.println("\n=== FinTrack ===");
             System.out.println("1 - Adicionar gasto");
             System.out.println("2 - Listar gastos (NUVEM)");
-            System.out.println("3 - Remover gasto");
+            System.out.println("3 - Remover gasto (Sua Parte - Issue #4)");
             System.out.println("4 - Ver total gasto (NUVEM + API)");
             System.out.println("0 - Sair");
             System.out.print("Escolha uma opção: ");
@@ -74,25 +74,40 @@ public class FinTrack {
                     break;
 
                 case 3:
-                    // Mantido temporariamente conforme o escopo do grupo para a memória
-                    if (gastosMemoria.isEmpty()) {
-                        System.out.println("Nenhum gasto na memória para remover.");
-                    } else {
-                        System.out.println("\nGastos cadastrados na memória:");
-                        for (int i = 0; i < gastosMemoria.size(); i++) {
-                            System.out.println((i + 1) + " - " + gastosMemoria.get(i));
-                        }
+                    // --- SUA PARTE (ISSUE #4): GESTÃO DE ERROS E REMOÇÃO NO BANCO ---
+                    try {
+                        System.out.println("\n--- 🗑️ Menu de Remoção ---");
+                        System.out.println("1 - Remover gasto específico por ID");
+                        System.out.println("2 - Limpar todos os registros do banco (Zerar Tudo)");
+                        System.out.print("Escolha uma opção: ");
+                        int subOpcao = scanner.nextInt();
 
-                        System.out.print("Digite o número do gasto que deseja remover: ");
-                        int indice = scanner.nextInt();
-                        scanner.nextLine();
-
-                        if (indice < 1 || indice > gastosMemoria.size()) {
-                            System.out.println("Opção inválida. Nenhum gasto foi removido.");
+                        if (subOpcao == 1) {
+                            System.out.print("Digite o ID do gasto que deseja remover: ");
+                            int idParaRemover = scanner.nextInt();
+                            
+                            boolean sucesso = gastoDAO.deletarPorId(idParaRemover);
+                            if (sucesso) {
+                                System.out.println("✅ Gasto com ID " + idParaRemover + " foi removido do banco!");
+                            } else {
+                                System.out.println("⚠️ Nenhum gasto foi encontrado com esse ID (ou o banco falhou).");
+                            }
+                            
+                        } else if (subOpcao == 2) {
+                            System.out.print("⚠️ ATENÇÃO: Tem certeza que deseja APAGAR TUDO? (1-Sim / 2-Não): ");
+                            int confirma = scanner.nextInt();
+                            if (confirma == 1) {
+                                gastoDAO.limparTabela();
+                            } else {
+                                System.out.println("❌ Operação cancelada pelo usuário.");
+                            }
                         } else {
-                            Gasto removido = gastosMemoria.remove(indice - 1);
-                            System.out.println("Gasto removido com sucesso: " + removido);
+                            System.out.println("❌ Opção inválida.");
                         }
+
+                    } catch (Exception e) {
+                        System.out.println("❌ Erro inesperado no menu de remoção: " + e.getMessage());
+                        scanner.nextLine(); // Limpa o buffer do scanner para o menu não travar em loop
                     }
                     break;
 
