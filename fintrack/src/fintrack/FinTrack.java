@@ -8,10 +8,10 @@ public class FinTrack {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
-        // Mantemos a lista antiga temporariamente para não quebrar o "case 3" do seu colega da Issue #4
+        // Mantemos a lista antiga temporariamente para não quebrar o "case 3"
         ArrayList<Gasto> gastosMemoria = new ArrayList<>(); 
         
-        // Instanciamos o seu DAO (Issue #3) para consultar o banco
+        // Instanciamos o DAO para consultar o banco de dados de forma profissional
         GastoDAO gastoDAO = new GastoDAO(); 
         
         int opcao;
@@ -60,7 +60,7 @@ public class FinTrack {
                     break;
 
                 case 2:
-                    // --- SUA PARTE (Issue #3): Listagem do Banco ---
+                    // --- Listagem do Banco usando o GastoDAO ---
                     List<Gasto> gastosDoBanco = gastoDAO.listarTodos();
                     
                     if (gastosDoBanco.isEmpty()) {
@@ -74,7 +74,7 @@ public class FinTrack {
                     break;
 
                 case 3:
-                    // O Aluno da Issue #4 vai alterar isso aqui depois, mantemos como estava
+                    // Mantido temporariamente conforme o escopo do grupo para a memória
                     if (gastosMemoria.isEmpty()) {
                         System.out.println("Nenhum gasto na memória para remover.");
                     } else {
@@ -97,7 +97,7 @@ public class FinTrack {
                     break;
 
                 case 4:
-                    // --- SUA PARTE (Issue #3): Cálculo e Integração ---
+                    // --- Cálculo e Integração via DAO ---
                     List<Gasto> listaParaSomar = gastoDAO.listarTodos();
                     double total = 0;
                     
@@ -107,7 +107,7 @@ public class FinTrack {
                     
                     System.out.println("\n💰 Total gasto (Nuvem): R$ " + String.format("%.2f", total));
 
-                    // Integração com API de câmbio (Já estava excelente, apenas mantive)
+                    // Integração com API de câmbio
                     System.out.println("🔄 Buscando cotações atuais na AwesomeAPI...");
                     try {
                         CambioService cambio = new CambioService();
